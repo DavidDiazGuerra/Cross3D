@@ -21,8 +21,8 @@ from acousticTrackingDataset import Parameter
 
 
 # %% Parameters
-res_the = 32  # Maps resolution (elevation)
-res_phi = 64  # Maps resolution (azimuth)
+res_the = 64   # Maps resolution (elevation)
+res_phi = 128  # Maps resolution (azimuth)
 
 K = 4096  # Window size
 fs = 16000
