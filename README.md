@@ -9,14 +9,19 @@ Code repository for the paper _Robust Sound Source Tracking Using SRP-PHAT and 3
 - [Pretrained models](#pretrained-models)
 - [References](#references)
 
+<p align="center">
+   <img src="images/tracking_example_4x8_T03_SNR30_room.png" width="400" title="example_room_1">
+   <img src="images/tracking_example_32x64_T09_SNR5_room.png" width="400" title="example_room_2">
+</p>
+<p align="center">
+   <img src="images/tracking_example_4x8_T03_SNR30.gif" width="400" title="example_maps_1">
+   <img src="images/tracking_example_32x64_T09_SNR5.gif" width="400" title="example_maps_2">
+</p>
+<p align="center">
+   <img src="images/tracking_example_4x8_T03_SNR30.png" width="400" title="example_est_1">
+   <img src="images/tracking_example_32x64_T09_SNR5.png" width="400" title="example_est_2">
+</p>
 
-![example_room_1](images/tracking_example_4x8_T03_SNR30_room.png)
-![example_maps_1](images/tracking_example_4x8_T03_SNR30.gif)
-![example_est_1](images/tracking_example_4x8_T03_SNR30.png)
-
-![example_room_2](images/tracking_example_32x64_T09_SNR5_room.png)
-![example_maps_2](images/tracking_example_32x64_T09_SNR5.gif)
-![example_est_2](images/tracking_example_32x64_T09_SNR5.png)
 
 ## Dependencies
 
