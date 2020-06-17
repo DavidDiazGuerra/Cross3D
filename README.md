@@ -89,7 +89,7 @@ in them that is not used by the main scripts may be untested and could contain b
 ## References
 
 >[1] D. Diaz-Guerra, A. Miguel, J.R. Beltran, "Robust Sound Source Tracking Using SRP-PHAT and 3D Convolutional Neural 
-Networks," [[arXiv preprint]()].
+Networks," [[arXiv preprint](https://arxiv.org/abs/2006.09006)].
 >
 >[2] D. Diaz-Guerra, A. Miguel, J.R. Beltran, "gpuRIR: A python library for Room Impulse Response simulation with GPU 
 acceleration," [[arXiv preprint](https://arxiv.org/abs/1810.11359)].
