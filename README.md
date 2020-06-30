@@ -5,6 +5,7 @@ Code repository for the paper _Robust Sound Source Tracking Using SRP-PHAT and 3
 
 - [Dependencies](#dependencies)
 - [Datasets](#datasets)
+- [Main scripts](#main-scripts)
 - [Other source files](#other-source-files)
 - [Pretrained models](#pretrained-models)
 - [References](#references)
