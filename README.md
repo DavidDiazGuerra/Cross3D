@@ -89,11 +89,10 @@ in them that is not used by the main scripts may be untested and could contain b
 
 ## References
 
->[1] D. Diaz-Guerra, A. Miguel, J.R. Beltran, "Robust Sound Source Tracking Using SRP-PHAT and 3D Convolutional Neural 
-Networks," [[arXiv preprint](https://arxiv.org/abs/2006.09006)].
+>[1] D. Diaz-Guerra, A. Miguel and J. R. Beltran, "Robust Sound Source Tracking Using SRP-PHAT and 3D Convolutional Neural Networks," in IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 29, pp. 300-311, 2021 [[DOI](https://doi.org/10.1109/TASLP.2020.3040031)] [[arXiv preprint](https://arxiv.org/abs/2006.09006)].
 >
 >[2] D. Diaz-Guerra, A. Miguel, J.R. Beltran, "gpuRIR: A python library for Room Impulse Response simulation with GPU 
-acceleration," [[arXiv preprint](https://arxiv.org/abs/1810.11359)].
+acceleration," in Multimedia Tools and Applications, Oct. 2020 [[DOI](https://doi.org/10.1007/s11042-020-09905-3)] [[SharedIt](https://rdcu.be/b8gzW)] [[arXiv preprint](https://arxiv.org/abs/1810.11359)].
 >
 >[3] Sharath Adavanne, Archontis Politis, Joonas Nikunen, and Tuomas Virtanen, "Sound event localization and detection 
 of overlapping sources using convolutional recurrent neural network" in IEEE Journal of Selected Topics in Signal 
