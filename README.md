@@ -23,6 +23,8 @@ Code repository for the paper _Robust Sound Source Tracking Using SRP-PHAT and 3
    <img src="images/tracking_example_32x64_T09_SNR5.png" width="400" title="example_est_2">
 </p>
 
+You might also find interesting the following repository, using icosahedral CNNs to obtain better localization results with smaller models: https://github.com/DavidDiazGuerra/icoDOA
+
 
 ## Dependencies
 
