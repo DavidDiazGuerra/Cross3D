@@ -14,22 +14,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-# %% Complex number operations
-
-def complex_multiplication(x, y):
-	return torch.stack([ x[...,0]*y[...,0] - x[...,1]*y[...,1],   x[...,0]*y[...,1] + x[...,1]*y[...,0]  ], dim=-1)
-
-
-def complex_conjugate_multiplication(x, y):
-	return torch.stack([ x[...,0]*y[...,0] + x[...,1]*y[...,1],   x[...,1]*y[...,0] - x[...,0]*y[...,1]  ], dim=-1)
-
-
-def complex_cart2polar(x):
-	mod = torch.sqrt( complex_conjugate_multiplication(x, x)[..., 0] )
-	phase = torch.atan2(x[..., 1], x[..., 0])
-	return torch.stack((mod, phase), dim=-1)
-
-
 # %% Neural Network layers
 
 class CausConv3d(nn.Module):
@@ -69,7 +53,6 @@ class CausConv1d(nn.Module):
 
 
 # %% Signal processing and DOA estimation layers
-
 class GCC(nn.Module):
 	""" Compute the Generalized Cross Correlation of the inputs.
 	In the constructor of the layer, you need to indicate the number of signals (N) and the window length (K).
@@ -86,16 +69,14 @@ class GCC(nn.Module):
 		self.transform = transform
 	
 	def forward(self, x):
-		x_fft = torch.rfft(x, 1)
+		x_fft = torch.fft.rfft(x)
 		if self.transform == 'PHAT':
-			mod = torch.sqrt( complex_conjugate_multiplication(x_fft, x_fft) )[..., 0]
-			mod += 1e-12 # To avoid numerical issues
-			x_fft /= mod.reshape(tuple(x_fft.shape[:-1])+(1,))
+			x_fft /= (x_fft.abs() + 1e-12)
 		
-		gcc = torch.empty(list(x_fft.shape[0:-3]) + [self.N, self.N, 2*self.tau_max+1], device=x.device)
+		gcc = torch.empty(list(x_fft.shape[0:-2]) + [self.N, self.N, 2*self.tau_max+1], device=x.device)
 		for n in range(self.N):
-			gcc_fft_batch = complex_conjugate_multiplication( x_fft[...,n,:,:].unsqueeze(-3), x_fft )
-			gcc_batch = torch.irfft(gcc_fft_batch, 1, signal_sizes=(self.K,))
+			gcc_fft_batch = x_fft[...,n,:].unsqueeze(-2) * x_fft.conj()
+			gcc_batch = torch.fft.irfft(gcc_fft_batch, n=self.K)
 			gcc[..., n, :, 0:self.tau_max+1] = gcc_batch[..., 0:self.tau_max+1]
 			gcc[..., n, :, -self.tau_max:] = gcc_batch[..., -self.tau_max:]
 			
